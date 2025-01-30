@@ -31,7 +31,7 @@ describe('AppComponent', () => {
   it("should have the 'Bem-vindo ao MeuApp!'", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.subtitle ).toEqual('Lincoln');
+    expect(app.subtitle ).toEqual('Bem-vindo ao MeuApp!');
   });
   
   
