@@ -1,59 +1,84 @@
 # MeuApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+**MeuApp** é uma aplicação web construída com **Angular**. O objetivo deste projeto é fornecer uma base sólida para o desenvolvimento de aplicações SPA (Single Page Application).
 
-## Development server
+## Tecnologias utilizadas
 
-To start a local development server, run:
+- Angular
+- TypeScript
+- HTML/CSS
+- RxJS
+- Angular Router
 
-```bash
-ng serve
-```
+## Pré-requisitos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Antes de começar, você precisará ter o seguinte instalado na sua máquina:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+- [Angular CLI](https://angular.io/cli) (instalado globalmente via npm)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Como rodar o projeto localmente
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+1. Clone o repositório:
 
 ```bash
-ng build
-```
+git clone https://github.com/SeuUsuario/MeuApp.git
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+roda:
 
-## Running unit tests
+npm install   "instala as dependencias"  
+npm run test  "roda os teste unitarios"
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 
+2. instalar:
 
-```bash
-ng test
-```
+    1- java 17
+    2-Instalar Jenkins
+    3-Instala angula pelo terminal
 
-## Running end-to-end tests
+3. configurar projeto:
+Projeto criar:
+    1- ng new MeuApp (para criar projeto em /angular);
+    2- No package-json excluir Karma e instalar Jest;
+    3-Excluir package-look-json e node modules;
+    4-instalat jest: npm install --save-dev jest @types/jest ts-jest jest-preset-angular
+    5-instalar npm i (instalar as dependências)
 
-For end-to-end (e2e) testing, run:
+4. configura jest para rodar:
+    1- Criar pasta jest.config.js
+    2- Em SRC cria o arquivo setup-jest.js
+    3- No arquivo angular.json apagar o segundo test e inserir esse:
+    "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+              "tsConfig": "tsconfig.spec.json",
+              "stupeFile": "src/setup-jest.ts",
+              "jestConfig": "jest.config.js"
+            
+          }
+        }
+    4- Em package.json deixar "test": "jest"
+    5- Em ts.config inserir "esModuleInterop": true
 
-```bash
-ng e2e
-```
+5. Abrir Jenkins http://localhost:5000/   "Jenkins roda em ambiente local"
+    1- file:///C:/ProgramData/Jenkins/.jenkins/secrets/initialAdminPassword  para pegar a senha
+    2- senha: Inserir senha criada
+    3- instalar node no Jenkins > Gerenciar Jenkins > plugins e tools
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+6. Ngrok (serve para comunicar webhook dispara para jeskins que foi feito o commit no GitHub ai ele roda a  pipeline)
+    
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    rodando no termina:
+    1- rodar o token: ngrok config add-authtoken "inserir token"
+    2- abrir o terminal na pasta ngrok e rodar .\ngrok.exe http 5000
+    3- abrir a porta no chrome
+
+7. Criar token no GitHub para jenkins tenha acesso:
+    1- serttings > Developer settings > Personal access tokens(classics) e seta repôs e gerar token 
+    2- No jenkis > gerenciar Jenkins > system e configura token e o nome da pipeline é 'meuapp_ci'
+    3- No projeto visual studio cria a pasta jenkinsfile
+    4- No Jenkins em nova tarefa configurar a pipeline
+    5- No GitHub em settings webhooks e o link é o Jenkins caminho do nrok do terminal;
+
+
