@@ -1,13 +1,13 @@
 pipeline {
     agent any
-     tools {
+    tools {
         nodejs "node 22.11.0"
-     }
+    }
 
-     stages {
+    stages {
         stage('Checkout') {
             steps {
-                Checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/QaLincoln/MeuappCI.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/QaLincoln/MeuappCI.git']]])
             }
         }
 
@@ -23,6 +23,5 @@ pipeline {
                 bat 'npm run test'
             }
         }
-        
-     }
+    }
 }
