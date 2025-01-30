@@ -26,4 +26,13 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, MeuApp');
   });
+
+  ///implementado
+  it("should have the 'Bem-vindo ao MeuApp!'", () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.subtitle ).toEqual('Lincoln');
+  });
+  
+  
 });
