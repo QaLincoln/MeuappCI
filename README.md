@@ -22,7 +22,7 @@ Antes de começar, você precisará ter o seguinte instalado na sua máquina:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/?/MeuappCI.git
+git clone https://github.com/nome/MeuappCI.git
 
 rodar:
 
