@@ -22,9 +22,9 @@ Antes de começar, você precisará ter o seguinte instalado na sua máquina:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/SeuUsuario/MeuApp.git
+git clone https://github.com/?/MeuappCI.git
 
-roda:
+rodar:
 
 npm install   "instala as dependencias"  
 npm run test  "roda os teste unitarios"
